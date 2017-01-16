@@ -312,7 +312,7 @@ class SitePostsController extends Controller
         
 
 
-        $bodyData = array(
+        $data = array(
             'title' => $title,
             'initial' => $initial, 
             'reason' => $reason, 
@@ -324,7 +324,7 @@ class SitePostsController extends Controller
 
 
         /*----------*/
-        Mail::send('new-front.report', $bodyData, function ($m) use ($data) {
+        Mail::send('new-front.report', $data, function ($m) use ($data) {
             $m->from($data['email'], $data['title']);
             $m->to($data['email'], $data['name'])->subject($data['title']);
         });
