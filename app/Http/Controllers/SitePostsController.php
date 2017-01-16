@@ -314,7 +314,7 @@ class SitePostsController extends Controller
         $bodyData = array(
             'title' => $title,
             'initial' => $initial, 
-            'reason' => $emails, 
+            'reason' => $reason, 
             'link' => Custom::makePostURL($post_id, $post->content), 
             'email' => $email, 
             'name' => $name
