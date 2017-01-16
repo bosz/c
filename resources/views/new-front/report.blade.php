@@ -1,0 +1,1 @@
+La story {{$initial}} a été signalé pour {{$reason}} {{$link}}
