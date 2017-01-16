@@ -1,1 +1,1 @@
-La story {{$initial}} a été signalé pour {{$reason}} {{$link}}
+La story {{$initial}} a été signalé pour {{$reason}} <a href="http://35.162.45.193/post/{{$link}}">See full story</a> 
