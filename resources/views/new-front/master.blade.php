@@ -215,10 +215,9 @@
                     return false;
                 }
 
-                _that.remove();
 
 
-                var post_id = _that.parent().parent().data('post-id');
+                var post_id = _that.parent().data('post-id');
                 var reason = _that.data('reason');
                 data = {_token: token, post_id: post_id, report: reason}
 
@@ -230,11 +229,11 @@
                     success: function(response) {
                         if (response.status == 'success') {
                             alert(response.message)
+                            _that.remove();
                         } else {
                             alert(response.message)
                         }
                         console.log(position, reason);
-
                     }
                 });
             })
