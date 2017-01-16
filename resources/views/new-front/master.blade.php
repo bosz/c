@@ -222,6 +222,7 @@
                 var reason = _that.data('reason');
                 data = {_token: token, post_id: post_id, report: reason}
 
+                console.log(position, reason);
                 $.ajax({
                     type: "POST",
                     url: url + '/post/report',
@@ -232,6 +233,7 @@
                         } else {
                             alert(response.message)
                         }
+                        console.log(position, reason);
 
                     }
                 });
