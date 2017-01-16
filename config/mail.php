@@ -1,19 +1,4 @@
 <?php
-
-
-return array(
-    'driver' => 'smtp',
-    'host' => 'smtp.gmail.com',
-    'port' => 465,
-    'from' => array('address' => 'digitalrentertrans@gmail.com', 'name' => 'Fongoh'),
-    'encryption' => 'ssl',
-    'username' => 'digitalrentertrans@gmail.com',
-    'password' => 'trans@123',
-    'sendmail' => '/usr/sbin/sendmail -bs',
-    'pretend' => false,
-);
-
-
 return [
 
     /*
