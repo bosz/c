@@ -306,9 +306,10 @@ class SitePostsController extends Controller
         $content = strip_tags($post->content);
         $initial = substr($content, 0, 20);
         $title = 'Contenu signalé - story ' . $initial;
-        $name = 'Test';
-        // $email = 'contact@xystories.com'; //Real email
-        $email = 'fongohmartin@gmail.com'; //Test
+        $name = 'XY Stories';
+        $email1 = 'contact@xystories.com'; //Real email
+        $email2 = 'report@xystories.com'; //Test
+        $email3 = 'fongohmartin@gmail.com'; //Test
         
 
 
@@ -317,7 +318,9 @@ class SitePostsController extends Controller
             'initial' => $initial, 
             'reason' => $reason, 
             'link' => Custom::makePostURL($post_id, $post->content), 
-            'email' => $email, 
+            'email1' => $email1, 
+            'email2' => $email2, 
+            'email3' => $email3, 
             'name' => $name
         );
 
@@ -326,7 +329,9 @@ class SitePostsController extends Controller
         /*----------*/
         Mail::send('new-front.report', $data, function ($m) use ($data) {
             $m->from($data['email'], $data['title']);
-            $m->to($data['email'], $data['name'])->subject($data['title']);
+            $m->to($data['email1'], $data['name'])->subject($data['title']);
+            $m->to($data['email2'], $data['name'])->subject($data['title']);
+            $m->to($data['email3'], $data['name'])->subject($data['title']);
         });
         return ['status' => 'success', 'message' => 'Le contenu a bien été signalé.'];
     }
