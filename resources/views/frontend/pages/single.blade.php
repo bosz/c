@@ -40,7 +40,7 @@
                                     <div class="dropdown">
                                         <i class="fa fa-ban dropbtn" ></i>
                                         <div class="dropdown-content" data-post-id="{{$post->id}}">
-                                            <a href="" class="no-click" ><center><i class="fa fa-warning"></i> REPORT</center></a>
+                                            <a href="" class="no-click" ><center><i class="fa fa-warning"></i> SIGNALER</center></a>
                                             <a data-reason="Contenu raciste">Contenu raciste</a>
                                             <a data-reason="Contenu sexiste">Contenu sexiste</a>
                                             <a data-reason="Contenu vulgaire">Contenu vulgaire</a>

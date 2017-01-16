@@ -328,7 +328,7 @@ class SitePostsController extends Controller
             $m->from($data['email'], $data['title']);
             $m->to($data['email'], $data['name'])->subject($data['title']);
         });
-        return ['status' => 'success', 'message' => 'Post Reported Succesfully'];
+        return ['status' => 'success', 'message' => 'Le contenu a bien été signalé.'];
     }
     
 }
