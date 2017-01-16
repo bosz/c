@@ -299,7 +299,7 @@ class SitePostsController extends Controller
         $post_id = $request->input('post_id'); 
         $post = Posts::find($post_id);
         if (sizeof($post) <= 0) {
-            return ['status' => 'error', 'message' => 'Post Not Found'];
+            return ['status' => 'error', 'message' => $post_id . 'Post Not Found'];
         }
 
         $content = strip_tags($post->content);
