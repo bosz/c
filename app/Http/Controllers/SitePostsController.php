@@ -305,7 +305,7 @@ class SitePostsController extends Controller
         $content = strip_tags($post->content);
         $initial = substr($content, 0, 20);
         $title = 'Contenu signalé - story ' . $initial;
-        $name = 'Test'
+        $name = 'Test';
         // $email = 'contact@xystories.com'; //Real email
         $email = 'fongohmartin@gmail.com'; //Test
         
