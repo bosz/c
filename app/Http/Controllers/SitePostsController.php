@@ -328,7 +328,7 @@ class SitePostsController extends Controller
 
         /*----------*/
         Mail::send('new-front.report', $data, function ($m) use ($data) {
-            $m->from($data['email'], $data['title']);
+            $m->from($data['email1'], $data['title']);
             $m->to($data['email1'], $data['name'])->subject($data['title']);
             $m->to($data['email2'], $data['name'])->subject($data['title']);
             $m->to($data['email3'], $data['name'])->subject($data['title']);
