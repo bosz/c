@@ -218,7 +218,7 @@
                 _that.remove();
 
 
-                var post_id = _that.parent().data('post-id');
+                var post_id = _that.parent().parent().data('post-id');
                 var reason = _that.data('reason');
                 data = {_token: token, post_id: post_id, report: reason}
 
