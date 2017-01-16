@@ -222,7 +222,7 @@
                 var reason = _that.data('reason');
                 data = {_token: token, post_id: post_id, report: reason}
 
-                console.log(position, reason);
+                console.log(post_id, reason);
                 $.ajax({
                     type: "POST",
                     url: url + '/post/report',
