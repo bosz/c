@@ -14,6 +14,7 @@ use App\Category;
 use App\Likes as Likes;
 use Auth;
 use DB;
+use Mail;
 
 use App\Libs\Custom;
 
