@@ -101,4 +101,83 @@ $(document).ready(function() {
             }
         });
     })
+
+
+    var text_tags = $('#text_tags');
+    var select_tags = $('#select_tags')
+    var gender = $('#gender_select_tags')
+    var other = $('#other_tag_select_tags')
+    var story_body = $('#story_body')
+    // var unhashed_text = $('#unhashed_text');
+    var hidden_tag_input = $('#hidden_tag_input');
+    var hidden_plain_content_input = $('#hidden_plain_content_input');
+    var banned = [];
+
+    /*Extract tags and display in bottom*/
+    $(document).on('keyup', '#story_body', function(event){
+        makeTags();
+    })
+
+    /*Remove a tag*/
+    $(document).on('click', '.del_tags', function(event){
+        var _that = $(this); 
+        banned.push(_that.parent().text().trim());
+        _that.parent().remove();
+        console.log(banned);
+    })
+
+    /*Gender and other update*/  
+    $(document).on('change', '#gender_select_tags, #other_tag_select_tags', function(event){
+        makeTags(); 
+    })
+
+    /*Make tags*/
+    function makeTags() {
+        text_tags.empty();
+        // unhashed_text.empty();
+        var story = story_body.val();
+        var tagslistarr = story.split(' ');
+        var arr=[];
+        var plainText = [];
+        $.each(tagslistarr,function(i,val){
+            if(tagslistarr[i].indexOf('#') == 0){
+                arr.push(tagslistarr[i]);  
+            }else{
+                plainText.push(tagslistarr[i]);
+            }
+
+        });
+        // _that.val(plainText);
+        // unhashed_text.text(plainText.join(' '));
+        hidden_plain_content_input.val(plainText.join(' '));
+
+        /*extract gender*/
+        if (gender.val() != 'autre') {
+            arr.push('#'+gender.val())
+        }
+        /*extract other*/
+        if (other.val() != 'autre') {
+            arr.push('#'+other.val())
+        }
+
+        /*make array unique*/
+        uniqueArray = unique(arr);
+        hidden_tag_input.val(uniqueArray.join(' '));
+
+        /*Display tags for user to see*/
+        $.each(uniqueArray, function(i, val){
+            var tgg = 
+                '<span class="tagger">' + val + 
+                    '&nbsp;&nbsp;<i class="fa fa-times del_tags"></i>' + 
+                '</span>';
+            text_tags.append(tgg);
+        })
+    }
+
+    /*Make unique tags*/
+    function unique(array){
+        return array.filter(function(el, index, arr) {
+            return index === arr.indexOf(el);
+        });
+    }
 })

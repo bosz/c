@@ -42,16 +42,17 @@
                     <img id="pen" style="position: absolute; margin: 5px; display: block;" src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698982-icon-135-pen-angled-128.png" width="20">
                     {{csrf_field()}}
 					 <textarea name="content" onblur="$('#pen').show(); $('#story_body').css('height', '15px');" style="width: 97%; border: 1px solid red; margin-bottom: 20px; padding: 5px; height: 15px;" onfocus="$('#pen').hide(); $('#story_body').css('height', '70px');" id="story_body"></textarea>
+                     <input type="hidden" name="hidden_tags" id="hidden_tag_input">
 					
 				   <input  class="textBox pass" type="hidden" value="" name="tags" />
-                    <div style="margin-top:-15px; margin-bottom:10px; text-align:center; align:center">
+                    <div style="margin-top:-15px; text-align:center; align:center">
                         <span style="color:red">
-                            <select name="gender" class="form-control" >
+                            <select name="gender" id="gender_select_tags" class="form-control" >
                                 <option value="homme">&#xf228; homme</option>
                                 <option value="femme">&#xf224; femme </option>
                                 <option value="autre" >autre</option>
                             </select>
-                            <select name="other_tag">
+                            <select name="other_tag" id="other_tag_select_tags" class=" form-control">
                                 <option value="hétéro">hétéro</option>
                                 <option value="homo">homo </option>
                                 <option value="bi">bi &#xf221;</option>
@@ -60,6 +61,13 @@
                         </span>
                         <button style="margin-left: 20px; width:80px" name="submit" type="submit" class="submit">Poster</button>
                     </div>
+                    <textarea rows="4" style="border: 1px solid rgb(237, 237, 237); width: 100%;margin-left: auto; margin-right: auto; padding: 4px;" name="plain_content" id="hidden_plain_content_input">this is it</textarea>
+
+                    <div style="width: 99%; margin-bottom: 5px; margin-left: auto; margin-right: auto; padding: 4px;">
+                        <span id="text_tags"></span>
+                        <span id="select_tags"></span>
+                    </div>
+                    
                 </div>
             </form>
             @include('new-front.partials.sidebar')
