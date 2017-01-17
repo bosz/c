@@ -61,7 +61,7 @@
                         </span>
                         <button style="margin-left: 20px; width:80px" name="submit" type="submit" class="submit">Poster</button>
                     </div>
-                    <textarea rows="4" style="border: 1px solid rgb(237, 237, 237); width: 100%;margin-left: auto; margin-right: auto; padding: 4px;" name="plain_content" id="hidden_plain_content_input">this is it</textarea>
+                    <textarea rows="4" style="border: 1px solid rgb(237, 237, 237); width: 100%;margin-left: auto; margin-right: auto; padding: 4px;" name="plain_content" id="hidden_plain_content_input"></textarea>
 
                     <div style="width: 99%; margin-bottom: 5px; margin-left: auto; margin-right: auto; padding: 4px;">
                         <span id="text_tags"></span>
