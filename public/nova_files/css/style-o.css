@@ -745,6 +745,7 @@ hr
 .dropdown-content {
 	z-index: 9999;
     display: none;
+    visibility: hidden;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
@@ -764,4 +765,4 @@ hr
 .dropdown a:hover {background: #f9674e}
 .dropdown a.no-click:hover {background: #f9f9f9; cursor: none;}
 
-.show {display:block;}
+.show {display:block; visibility: visible;}
