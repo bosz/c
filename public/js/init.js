@@ -61,75 +61,7 @@ $(document).ready(function() {
             }
         }
     });
-
-
-    /*Ajax call for likes*/
-    $(document).on('click', '.heart', function(event){
-        var that = $(this);
-        if (that.hasClass('active')) { //Has already been liked
-            return false;
-        }
-        var post_id = that.data('post-id');
-        data = {_token: token, post_id: post_id}
-
-        $.ajax({
-            type: "POST",
-            url: url + '/post/like/store',
-            data: data,
-            success: function(response) {
-                if (response.status == 'success') {
-                    console.log(response)
-                    // $('.load-part').removeClass('submit').before(response.content)
-                    that.addClass('active');
-                    console.log(response.likes_count);
-                    that.children('.likes_count').html(response.likes_count);
-                } else {
-
-                }
-
-            }
-        });
-    })
-
 });
-
-/*$(window).scroll(function () {
-    var artTop = $('article.question').last().offset().top;
-    if (location.pathname == '/') {
-
-
-        if ($(window).scrollTop() >= artTop - 550 && isAjaxCalled) {
-
-            isAjaxCalled = false;
-
-            $('.load-part').addClass('active');
-            $.ajax({
-                type: "POST",
-                url: url + '/post/paginate',
-                data: {_token: token, offset: offset},
-                success: function (response) {
-                    if (response.status == 'success') {
-                        isAjaxCalled = true;
-                        $('.load-part').removeClass('active');
-
-                        $('.tab-inner-warp .tab-inner').append(response.content)
-
-                        offset += 10;
-                    } else {
-
-                        isAjaxCalled = false;
-
-                        $('.load-part').removeClass('active');
-
-                        $('.tab-inner-warp .tab-inner').append('<h2>' + response.message + '</h2>')
-                    }
-
-                }
-            });
-        }
-    }
-});
-*/
 
 $(function() {
     $('.navigation_mobile').on('click', function() {

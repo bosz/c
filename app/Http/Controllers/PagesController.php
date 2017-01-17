@@ -210,7 +210,12 @@ class PagesController extends Controller
     {
         $tmp = explode('_', $url_id); 
         $id = $tmp[sizeof($tmp)-1];
-        $post = Posts::findOrFail($id);
+        $post = Posts::select(['posts.*', DB::raw('count(likes.post_id) as likes_count')])
+                ->leftJoin('likes', 'likes.post_id', '=', 'posts.id')
+                ->where('posts.id', '=', $id)
+                ->groupBy('posts.id')
+                ->first();
+
 
         $blogKey = 'blog_' . $id;
 
