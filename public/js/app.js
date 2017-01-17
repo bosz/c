@@ -11,22 +11,8 @@ ga('send', 'pageview');
 $('.dropbtn').css('cursor', 'pointer');
 
 
-
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
 $(document).ready(function() {
+
 
     /**/
     $('.carousel').carousel({
@@ -57,17 +43,7 @@ $(document).ready(function() {
         }
     })
 
-    $(document).on('click', '.dropbtn', function(event){
-        var _that = $(this);
-        if(_that.parent().children('div').hasClass('show')){
-            $('.dropdown-content').removeClass('show');
-        }else{
-            $('.dropdown-content').removeClass('show');
-            _that.parent().children('div').addClass('show');
-        }
-    })
-
-    $(document).on('click', '.dropdown-content a', function(e){
+    $(document).on('click', '.dropdown-report li', function(e){
         var _that = $(this); 
         if (_that.hasClass('no-click')) {
             e.preventDefault();
@@ -78,10 +54,10 @@ $(document).ready(function() {
 
         var post_id = _that.parent().data('post-id');
         var reason = _that.data('reason');
-        console.log('tokennn ', token);
+        //console.log(post_id, reason);
         data = {_token: token, post_id: post_id, report: reason}
 
-        console.log(post_id, reason);
+        //console.log(post_id, reason);
         $.ajax({
             type: "POST",
             url: url + '/post/report',
@@ -93,7 +69,7 @@ $(document).ready(function() {
                 } else {
                     alert(response.message)
                 }
-                console.log(post_id, reason);
+                //console.log(post_id, reason);
             }
         });
     })
@@ -113,10 +89,10 @@ $(document).ready(function() {
             data: data,
             success: function(response) {
                 if (response.status == 'success') {
-                    console.log(response)
+                    //console.log(response)
                     // $('.load-part').removeClass('submit').before(response.content)
                     that.addClass('active');
-                    console.log(response.likes_count);
+                    //console.log(response.likes_count);
                     that.children('.likes_count').html(response.likes_count);
                 } else {
 

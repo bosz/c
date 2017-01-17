@@ -35,6 +35,7 @@
         <!-- <link href="{{ asset('tag/css/jquery.tagsinput.css') }}" rel="stylesheet" type="text/css"> -->
         <link href="{{ asset('nova_files/css/bootstrap.min.css') }}" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('editor/dist/ui/trumbowyg.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('drop/css/jquery.sweet-dropdown.min.css')}}">
 		
 
         <style>
@@ -150,8 +151,9 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="{{ asset('nova_files/js/bootstrap.min.js')}}"></script>
-        <script src="{{ asset('js/app.js')}}"></script>
         <script src="{{ asset('editor/dist/trumbowyg.js')}}"></script>
+        <script src="{{ asset('drop/js/jquery.sweet-dropdown.min.js')}}"></script>
+        <script src="{{ asset('js/app.js')}}"></script>
         <!-- <script src="{{ asset('tag/js/jquery.tagsinput.js') }}" type="text/javascript" charset="utf-8"></script> -->
         <!-- <script src="{{ asset('stickyjs/jquery.sticky.js') }}"></script> -->
         @yield('js')

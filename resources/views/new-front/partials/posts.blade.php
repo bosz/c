@@ -25,17 +25,20 @@
         </div>
         <div class="icons iconss">
             <span class="leftIcon" style="width:35%;">
-            <div class="dropdown">
-                <i class="fa fa-ban dropbtn" ></i>
-                <div class="dropdown-content" data-post-id="{{$post[0]->id}}">
-                    <a href="" class="no-click" ><center><i class="fa fa-warning"></i> SIGNALER</center></a>
-                    <a data-reason="Contenu raciste">Contenu raciste</a>
-                    <a data-reason="Contenu sexiste">Contenu sexiste</a>
-                    <a data-reason="Contenu vulgaire">Contenu vulgaire</a>
-                    <a data-reason="Contenu non-approprié">Contenu non-approprié</a>
-                    <a data-reason="Autres">Autres</a>
+            <span class="dropdown">
+                <i data-dropdown="#drop-{{$post[0]->id}}" class="fa fa-ban dropbtn" ></i>
+                <div class="dropdown-menu dropdown-report dropdown-anchor-top-left dropdown-has-anchor" id="drop-{{$post[0]->id}}" >
+                  <ul data-post-id="{{$post[0]->id}}">
+                    <li class="no-click"><a ><center><i class="fa fa-warning"></i> SIGNALER</center></a></li>
+                    <li class="divider"></li>
+                    <li data-reason="Contenu raciste"><a>Contenu raciste</a></li>
+                    <li data-reason="Contenu sexiste"><a>Contenu sexiste</a></li>
+                    <li data-reason="Contenu non-approprié"><a>Contenu non-approprié</a></li>
+                    <li data-reason="Contenu non-approprié"><a>Contenu non-approprié</a></li>
+                    <li data-reason="Autres"><a>Autres</a></li>
+                  </ul>
                 </div>
-            </div>
+            </span>
             &nbsp;
 			 <a href="{{url('post/')}}/{{ App\Libs\Custom::makePostURL($post[0]->id, $post[0]->content) }}"><img src="{{URL::asset('images/1484179391_back.png')}}" width="18">&nbsp;<span style="color:#3d3d3d;font-size:13px !important">partager</span></a></span>
             <span class="heart {{$post[0]->liked == true ? 'active' : null }}" data-post-id={{$post[0]->id}}><i class="likes_count">{{ $post[0]->likes_count != NULL ? $post[0]->likes_count : 0 }}</i><i class="fa fa-heart" style="width:35px; height:35px; line-height:35px;text-align:center; background:#ededed; border-radius:50%;"></i></span>
@@ -72,17 +75,20 @@
             </div>
             <div class="icons">
                 <span class="leftIcon" style="width:35%;">
-                <div class="dropdown">
-                <i class="fa fa-ban dropbtn" ></i>
-                <div class="dropdown-content" data-post-id="{{$post[1]->id}}">
-                    <a href="" class="no-click" ><center><i class="fa fa-warning"></i> SIGNALER</center></a>
-                    <a data-reason="Contenu raciste">Contenu raciste</a>
-                    <a data-reason="Contenu sexiste">Contenu sexiste</a>
-                    <a data-reason="Contenu vulgaire">Contenu vulgaire</a>
-                    <a data-reason="Contenu non-approprié">Contenu non-approprié</a>
-                    <a data-reason="Autres">Autres</a>
-                </div>
-            </div>
+                <span class="dropdown">
+                    <i data-dropdown="#drop-{{$post[1]->id}}" class="fa fa-ban dropbtn" ></i>
+                    <div class="dropdown-menu dropdown-report dropdown-anchor-top-left dropdown-has-anchor" id="drop-{{$post[1]->id}}" >
+                      <ul data-post-id="{{$post[1]->id}}">
+                        <li class="no-click"><a ><center><i class="fa fa-warning"></i> SIGNALER</center></a></li>
+                        <li class="divider"></li>
+                        <li data-reason="Contenu raciste"><a>Contenu raciste</a></li>
+                        <li data-reason="Contenu sexiste"><a>Contenu sexiste</a></li>
+                        <li data-reason="Contenu non-approprié"><a>Contenu non-approprié</a></li>
+                        <li data-reason="Contenu non-approprié"><a>Contenu non-approprié</a></li>
+                        <li data-reason="Autres"><a>Autres</a></li>
+                      </ul>
+                    </div>
+                </span>
                 &nbsp;
 			 <a href="{{url('post/')}}/{{ App\Libs\Custom::makePostURL($post[1]->id, $post[1]->content) }}"><img src="{{URL::asset('images/1484179391_back.png')}}" width="18">&nbsp;<span style="color:#3d3d3d;font-size:13px !important">partager</span></a></span>
                 <span class="heart {{$post[1]->liked == true ? 'active' : null }}" data-post-id={{$post[1]->id}}><i class="likes_count">{{ $post[1]->likes_count != NULL ? $post[1]->likes_count : 0 }}</i><i class="fa fa-heart red" style="width:35px; height:35px; line-height:35px;text-align:center; background:#ededed; border-radius:50%;"></i></span>
@@ -119,17 +125,20 @@
             </div>
             <div class="icons">
                 <span class="leftIcon" style="width:35%;">
-                <div class="dropdown">
-                <i class="fa fa-ban dropbtn" ></i>
-                <div class="dropdown-content" data-post-id="{{$post[2]->id}}">
-                    <a href="" class="no-click" ><center><i class="fa fa-warning"></i> SIGNALER</center></a>
-                    <a data-reason="Contenu raciste">Contenu raciste</a>
-                    <a data-reason="Contenu sexiste">Contenu sexiste</a>
-                    <a data-reason="Contenu vulgaire">Contenu vulgaire</a>
-                    <a data-reason="Contenu non-approprié">Contenu non-approprié</a>
-                    <a data-reason="Autres">Autres</a>
-                </div>
-            </div>
+                <span class="dropdown">
+                    <i data-dropdown="#drop-{{$post[2]->id}}" class="fa fa-ban dropbtn" ></i>
+                    <div class="dropdown-menu dropdown-report dropdown-anchor-top-left dropdown-has-anchor" id="drop-{{$post[2]->id}}" >
+                      <ul data-post-id="{{$post[2]->id}}">
+                        <li class="no-click"><a ><center><i class="fa fa-warning"></i> SIGNALER</center></a></li>
+                        <li class="divider"></li>
+                        <li data-reason="Contenu raciste"><a>Contenu raciste</a></li>
+                        <li data-reason="Contenu sexiste"><a>Contenu sexiste</a></li>
+                        <li data-reason="Contenu non-approprié"><a>Contenu non-approprié</a></li>
+                        <li data-reason="Contenu non-approprié"><a>Contenu non-approprié</a></li>
+                        <li data-reason="Autres"><a>Autres</a></li>
+                      </ul>
+                    </div>
+                </span>
                 &nbsp;
 				<a href="{{url('post/')}}/{{ App\Libs\Custom::makePostURL($post[2]->id, $post[2]->content) }}""><img src="{{URL::asset('images/1484179391_back.png')}}" width="18">&nbsp;<span style="color:#3d3d3d;font-size:13px !important">partager</span></a></span>
                 <span class="heart {{$post[2]->liked == true ? 'active' : null }}" data-post-id={{$post[2]->id}}><i class="likes_count">{{ $post[2]->likes_count != NULL ? $post[2]->likes_count : 0 }}</i><i class="fa fa-heart" style="width:35px; height:35px; line-height:35px;text-align:center; background:#ededed; border-radius:50%;"></i></span>

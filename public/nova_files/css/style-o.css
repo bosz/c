@@ -727,42 +727,5 @@ hr
 }
 	
 }
-
-/*Dropdown*/
-.dropbtn {
-}
-
-.dropbtn:hover, .dropbtn:focus {
-    border-radius: 40%;
-    background-color: #f9674e;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-	z-index: 9999;
-    display: none;
-    visibility: hidden;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 4px 5px;
-    text-decoration: none;
-    display: block;
-    font-family: light!important; 
-    cursor: pointer;
-}
-
-.dropdown a:hover {background: #f9674e}
-.dropdown a.no-click:hover {background: #f9f9f9; cursor: none;}
-
-.show {display:block; visibility: visible;}
+.dropdown-report li:hover{ background: red; }
+.no-click:hover{ color: transparent; background: transparent;cursor: none; }
